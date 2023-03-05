@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.bejelentkezes{
+align-self: center;
+border-radius: 20px;
+flex-direction: column;
+}
+.lgszoveg{
+    color: white;
+    font-size:medium;
+    font-weight: 500;
+}
+.lgszoveg1{
+    
+    color: rgb(1,194,154);
+    font-size: large;
+    font-weight: 700;
+}

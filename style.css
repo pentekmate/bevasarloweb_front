@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.footer{
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    background-color: rgb(50,50,50);
+    color:#3bd1ae;
+    position: fixed;
+}
+.fo{
+    overflow-x: hidden;
+    background-image: linear-gradient(#d4c5c5, #01C29A)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.velemeny{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+#profilkep{
+    background-color: rgb(50,50,50);
+    border-radius: 50px;
+}
+#logo
+{
+    background-color: rgb(50,50,50);
+    border-radius: 50px;
+    width:35px;
+    height:40px;
+}
+#logo:hover
+{
+    background-color: rgb(50,50,50);
+    border-radius: 0px;
+    transform: scale(1.2);
+}
+
+#leftimg{
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+#rightimg{
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+#balkep{
+    position: relative;
+    animation: balkepanim 5s ;
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+#balszoveg{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: purple;
+}
+
+#jobbkep{
+    position: relative;
+    animation: jobbkepanim 5s ;
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+#jobbszoveg{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+#profilkep:hover{
+    transform: scale(1.2); 
+}
+
+.pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover{
+    background-color:rgb(1,194,154);
+    border-radius: 10px;
+    transform: scale(1.2);
+}
+
+#leftimg:hover,#rightimg:hover{
+    transform: scale(1.1);
+}
+img{
+    z-index: 1;
+}
+
+#balkep {animation-timing-function: ease;}
+#jobbkep {animation-timing-function: ease;}
+
+
+@keyframes jobbkepanim {
+    from {right: -80%;}
+    to {right: -15%;}
+}
+@keyframes balkepanim {
+    from {left: -80%;}
+    to {left: -15%;}
+}
+
+

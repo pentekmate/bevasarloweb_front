@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Bevásárló listám</title>
+</head>
+
+<body>
+    <nav class="navbar bg-dark" style="position: sticky; top: 0 ; z-index: 2;">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="b-logo.png" alt="Logo" id="logo" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand komment" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;" href="#velemenyek"></a>
+            <a class="navbar-brand komment" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;" href="#velemenyek">Vélemények</a>
+            <a class="navbar-brand pontok" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;" href="#pontok">Pontok</a>
+            <a class="navbar-brand" style="color: white; font-size: 40px; text-shadow: 2px 2px 4px #000000;font-weight: bold;" href="#fel">Bevásárló
+                listám</a>
+                <a class="navbar-brand regisztracio" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;" href="#regisztráció">Regisztráció</a>
+                <a class="navbar-brand listak" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;" href="#listak">Listák</a>
+             <span style="color:white;font-size: 20px">Üdv itt! <span id="belepettfh" style="font-size: 20px;"></span> </span>
+           
+
+                <div class="dropdown btn-group dropstart">
+                     <div id="profilkep" class="dropdown-toggle bg-secondary" data-bs-toggle="dropdown"></div>
+
+                    <ul class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuButton1">
+                        <li><h6 class="dropdown-header" style="color:#000000">Profil</h6></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><h6 class="dropdown-header" style="color:#000000">Fiók</h6></li>
+                      <li><a  class="dropdown-item" style="text-decoration: none;" onclick="kilepes()" type="submit" >Kilépés</a></li>
+                    </ul>
+                  </div>
+              
+           
+        </div>
+       
+    </nav>
+    <div class="container-fluid fo" id="fel">
+
+        
+        <section style="margin-top: 10px;" id="regisztráció">
+            <div class="row justify-content-start " id="balkep" >
+                <div class="col-4" >
+                    <img src="phone1.png" id="leftimg"style="float: right;"  class="img-fluid">
+                </div>
+                <div class="col-4">
+                    
+                    <p style="margin-top: 1rem;" id="balszoveg">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 10px;" id="listak">
+            <div class="row justify-content-end " id="jobbkep" >
+                
+                <div class="col-4">
+                    
+                    <p style="margin-top: 1rem;" id="jobbszoveg">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </p>
+                </div>
+                <div class="col-4" >
+                    <img src="phone1.png" id="rightimg"style="float: left;"  class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+
+        <section style="margin-top: 10px;" id="pontok">
+            <div class="row justify-content-start " id="balkep" >
+                <div class="col-4" >
+                    <img src="phone1.png" id="leftimg"style="float: right;"  class="img-fluid">
+                </div>
+                <div class="col-4">
+                    
+                    <p style="margin-top: 1rem;" id="balszoveg">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                        Ipsum.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-fluid bg-dark w-50 velemeny">
+            <section style="margin-top: 10px;" id="velemenyek">
+                    <p style="color:white;text-align: center;font-size:20px;padding-top:1rem ;">Kipróbáltad az appot?</p>
+                    <h3 class="h3" style="text-align: center;color:white;padding-top: 1rem;margin-bottom: 2rem;">Írd le véleményed!</h3>
+
+                <div class="row-justify-cotent-start" id="uresfh">
+                    <div class="form-floating mb-3 ">
+                        <input type="text" class="form-control" id="felhasznalonev" placeholder="Felhasználónév">
+                        <label for="floaingInput">Felhasználónév</label>
+                    
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="hozzaszolas"></textarea>
+                        <label for="floatingTextarea">Véleményed</label>
+                    </div>
+                    <div class="mb-3" style="margin-top: 2rem;">
+                        <button type="submit" class="btn btn-danger mb-3" id="send">Küldés</button>
+                    </div>
+                </div>
+                    
+                
+            </section>
+        </div>
+   
+           
+    
+      
+        
+        
+    </div>
+
+    
+ <script src="mainlog.js"></script>
+</body>
+
+</html>

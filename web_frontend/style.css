@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item{
+    background-color: aqua;
+    width: 30%;
+    padding: 5px;
+    
+}
+.flex-center{
+    width: 40%;
+    padding: 1%;
+    background-color: rgb(50,50,50);
+}
+.kep{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    
+    
+}
+.flex-kep{
+    position: relative;
+    margin-left: 1%;
+}
+iframe{
+    height: 500px;
+    border-radius: 50px;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+
+#div1,#div2,#div3,#div4,#div5 {
+    width: 10%;
+    height: 10%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s ;
+    animation-fill-mode: forwards;
+  }
+  
+  #div1 {animation-timing-function: linear;}
+  #div2 {animation-timing-function: ease;}
+  #div3 {animation-timing-function: ease-in;}
+  #div4 {animation-timing-function: ease-out;}
+  #div5 {animation-timing-function: ease-in-out;}
+  
+  @keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+  }
+
