@@ -3,20 +3,14 @@
     margin: 0;
     color:white
 }
-.footer{
-    bottom: 0;
-    left: 0;
-    width: 100% !important;
-    background-color: rgb(50,50,50);
-    color:#3bd1ae;
-    position: fixed;
+html{
+    height: 100%;
 }
 
+
 .fo{
-    overflow-x: hidden;
-    background-image: linear-gradient(#d4c5c5, #01C29A)!important;
-    background-repeat: no-repeat;
-    background-size: cover;
+    min-height: 100%;
+    margin: 0 auto -50px;
 }
 
 
@@ -48,22 +42,34 @@
 }
 #balkep{
     position: relative;
-    animation: balkepanim 5s ;
-    animation-fill-mode: forwards;
-    transition: transform .5s ease;
 }
-#balszoveg{
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
-    background-color: purple;
-}
-
 #jobbkep{
     position: relative;
+    
+}
+.jobbkepanimacio{
     animation: jobbkepanim 5s ;
     animation-fill-mode: forwards;
     transition: transform .5s ease;
 }
+.balkepanimacio
+{
+    animation: balkepanim 5s ;
+    animation-fill-mode: forwards;
+    transition: transform .5s ease;
+}
+#szoveg{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size:24px
+}
+.footer,.push{
+    height: 50px;
+}
+.push{
+    margin-top: 2%;
+}
+
 #jobbszoveg{
     color: white;
     text-shadow: 2px 2px 4px #000000;
@@ -96,16 +102,63 @@ img{
 }
 #balkep {animation-timing-function: ease;}
 #jobbkep {animation-timing-function: ease;}
+#balszoveg{animation-timing-function: ease;}
+
+
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-image: linear-gradient(rgb(1,194,154),rgb(33,37,41))!important;
+    background-size: cover;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+
+
+.progress-container {
+    margin-bottom: 0 !important;
+    width: 100%;
+    height: 8px;
+    background: rgb(33,37,41);
+    padding-bottom: 0%;
+}
+.navbar{
+    padding-bottom: 0;
+    
+}
+.progress-bar {
+    height: 8px;
+    background: rgb(1,194,154);
+    width: 0%;
+}
+
+
 
 
 @keyframes jobbkepanim {
+    0%   { opacity: 0; }
+    20%   { opacity: 0; }
+  50% { opacity: 1; }
     from {right: -80%;}
     to {right: -15%;}
 }
 @keyframes balkepanim {
+    0%   { opacity: 0; }
+    20%   { opacity: 0; }
+  50% { opacity: 1; }
     from {left: -80%;}
     to {left: -15%;}
 }
-
 
 
