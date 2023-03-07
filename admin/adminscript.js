@@ -15,7 +15,7 @@ function Bejelentkezes() {
         }
 
 
-        fetch('http://localhost:3000/login', {
+        fetch('http://localhost:3000/adminlogin', {
             method: "POST",
             body: JSON.stringify(adatok),
             headers: { "Content-type": "application/json; charset=UTF-8" }

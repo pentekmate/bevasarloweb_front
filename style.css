@@ -106,7 +106,7 @@ img{
 
 
 body{
-    height: 100%;
+    
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -129,9 +129,10 @@ body{
 .progress-container {
     margin-bottom: 0 !important;
     width: 100%;
-    height: 8px;
+    height: 5px;
     background: rgb(33,37,41);
     padding-bottom: 0%;
+    box-shadow: 1px 3px 2px 1px rgb(50,50,50);
 }
 .navbar{
     padding-bottom: 0;
