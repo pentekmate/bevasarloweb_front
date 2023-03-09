@@ -20,7 +20,7 @@ function kommentek(tomb) {
         sz += '<p  style="font-weight:400;font-size:16px">' + item.wm_szoveg + ' </p>'
         sz += '<span  class="position-absolute bottom-0 end-0"  style="color:rgb(1,194,154)">' + item.wm_datum + '</span>'
         sz += '</div>'
-        sz += '<div class="col-2 bg-dark "><div class="d-flex flex-row bd-highlight mb-3"> <div class="p-2 bd-highlight" ><i style="color: green;"  class="bi bi-hand-thumbs-up-fill"></i></div ><div class="p-2 bd-highlight"><i style="color:red" class="bi bi-hand-thumbs-down-fill"></i></div><div class="p-2 bd-highlight"><i style="color:yellow" class="bi bi-exclamation-square-fill"></i></div></div ></div>'
+        sz += '<div class="col-2 bg-dark "><div class="d-flex flex-row bd-highlight mb-3"> <div class="p-2 bd-highlight" ><i style="color: green;"  class="bi bi-hand-thumbs-up-fill"><br>' + item.wm_egyetertett + '</i></div ><div class="p-2 bd-highlight"><i style="color:red" class="bi bi-hand-thumbs-down-fill"><br>' + item.wm_nemertett_egyett + '</i></div><div class="p-2 bd-highlight"><i style="color:yellow" class="bi bi-exclamation-square-fill"><br>' + item.wm_jelentett + '</i></div></div ></div>'
         sz += '</div>'
 
 
@@ -115,3 +115,19 @@ function myFunction() {
     document.getElementById("myBar").style.width = scrolled + "%";
 }
 
+//---------------------------Kommentek--------------------------
+
+const square5 = document.querySelector('.kommentek');
+square.classList.remove('kommentanim');
+
+const observer5 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            square5.classList.add('kommentanim');
+            return;
+        }
+
+        square5.classList.remove('kommentanim');
+    });
+});
+observer5.observe(document.querySelector('.kommentek'));

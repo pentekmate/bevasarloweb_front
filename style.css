@@ -6,32 +6,25 @@
 html{
     height: 100%;
 }
-
-
 .fo{
     min-height: 100%;
     margin: 0 auto -50px;
 }
-
-
 #profilkep{
     background-color: rgb(50,50,50);
     border-radius: 50px;
 }
-#logo
-{
+#logo{
     background-color: rgb(50,50,50);
     border-radius: 50px;
     width:35px;
     height:40px;
 }
-#logo:hover
-{
+#logo:hover{
     background-color: rgb(50,50,50);
     border-radius: 0px;
     transform: scale(1.2);
 }
-
 #leftimg{
     animation-fill-mode: forwards;
     transition: transform .5s ease;
@@ -44,16 +37,14 @@ html{
     position: relative;
 }
 #jobbkep{
-    position: relative;
-    
+    position: relative; 
 }
 .jobbkepanimacio{
     animation: jobbkepanim 5s ;
     animation-fill-mode: forwards;
     transition: transform .5s ease;
 }
-.balkepanimacio
-{
+.balkepanimacio{
     animation: balkepanim 5s ;
     animation-fill-mode: forwards;
     transition: transform .5s ease;
@@ -69,7 +60,6 @@ html{
 .push{
     margin-top: 2%;
 }
-
 #jobbszoveg{
     color: white;
     text-shadow: 2px 2px 4px #000000;
@@ -77,13 +67,11 @@ html{
 #profilkep:hover{
     transform: scale(1.2); 
 }
-
 .pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover{
     background-color:rgb(1,194,154);
     border-radius: 10px;
     transform: scale(1.2);
 }
-
 #leftimg:hover,#rightimg:hover{
     transform: scale(1.1);
 }
@@ -100,13 +88,24 @@ img{
     font-size: 35px;
     font-weight: 700;
 }
+.kommentek{
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+.kommentek.kommentanim{
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
 #balkep {animation-timing-function: ease;}
 #jobbkep {animation-timing-function: ease;}
 #balszoveg{animation-timing-function: ease;}
 
-
 body{
-    
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -122,10 +121,6 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
-
-
-
 .progress-container {
     margin-bottom: 0 !important;
     width: 100%;
@@ -136,17 +131,12 @@ body{
 }
 .navbar{
     padding-bottom: 0;
-    
 }
 .progress-bar {
     height: 8px;
     background: rgb(1,194,154);
     width: 0%;
 }
-
-
-
-
 @keyframes jobbkepanim {
     0%   { opacity: 0; }
     20%   { opacity: 0; }
