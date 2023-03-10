@@ -67,10 +67,14 @@ html{
 #profilkep:hover{
     transform: scale(1.2); 
 }
-.pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover{
+.pontok,.komment,.listak,.regisztracio,#logo,.bejelentkezesgomb,#profilkep{
+    transition: all 0.3s;
+   
+}
+.pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover,.bejelentkezesgomb:hover{
     background-color:rgb(1,194,154);
     border-radius: 10px;
-    transform: scale(1.2);
+    transform: translateY(-10px);
 }
 #leftimg:hover,#rightimg:hover{
     transform: scale(1.1);

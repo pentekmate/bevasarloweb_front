@@ -4,7 +4,7 @@ function Bejelentkezes() {
     let felh = document.getElementById("felh").value
     let jelsz = document.getElementById("jelsz").value
     console.log(jelsz)
-    if (felh != "webAdmin") {
+    if (felh != "Webadmin") {
         alert("Nem megfelelő felhasználónév.")
     }
     else {
@@ -37,3 +37,4 @@ function Bejelentkezes() {
 
     }
 }
+

@@ -115,3 +115,71 @@ function listakmegjelenit(tomb) {
     document.getElementById("tablazat2").innerHTML = sz
 
 }
+function kommenttorles(e,id){
+    if (!confirm('Biztosan törölni akarod?')) {
+        e.preventDefault();
+    }
+    else {
+        var adatok = {
+            bevitel1: id
+        }
+        try {
+            fetch("http://localhost:3000/kommenttorlese", {
+                method: 'DELETE',
+                body: JSON.stringify(adatok),
+                headers: { "Content-type": "application/json; charset=UTF-8" }
+            }).then(kommentfetch)
+        }
+        catch (e) {
+            console.log(e)
+        }
+        finally {
+            alert("Sikeres törlés!")
+        }
+    }
+}
+function kommentfetch()
+{
+
+    fetch("http://localhost:3000/jelentettkomment")
+    .then(x => x.json())
+    .then(y => kommentek(y))
+}
+
+
+function kommentek(tomb) {
+    let sz = "";
+    console.log("a",tomb)
+    if(tomb.length>0){
+        tomb.map((item) => {
+        
+            sz += '<tr>'
+            sz += '<td>'
+            sz += item.felhasznalo_nev
+            sz += '</td>'
+            sz += '<td>'
+            sz += item.wm_szoveg
+            sz += '</td>'
+            sz += '<td>'
+            sz+=item.wm_jelentett
+            sz += '</td>'
+            sz += '<td>'
+            sz += '<button type="button "onclick="kommenttorles(event,' + item.id + ')" style="color:white"  class="btn bg-danger">Törlés</button>'
+            sz += '</td>'
+            sz += '</tr>'
+        })
+    }
+
+    else{
+        sz='<td colspan="4" style="text-align:center;font-weight:bold;font-size:22px" >Nincs jelentett komment</td>'
+    }
+
+
+
+
+  
+    document.getElementById("tablazat3").innerHTML = sz
+}
+
+
+kommentfetch()

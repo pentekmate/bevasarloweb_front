@@ -85,101 +85,135 @@ function kommentek(tomb) {
     })
     document.getElementById("megjelenit").innerHTML = sz
 }
-function egyetert(egyetertett,id){
 
+function egyetert(egyetertett,id){
 
     let className = document.getElementById("like"+id).className;
   
     if(className=="bi bi-hand-thumbs-up")
     {
-        
-        let bemenet = {
-            "bevitel1": egyetertett+=1,
-            "bevitel2":id
-        }
-        fetch('http://localhost:3000/egyetert', {
-            method: "POST",
-            body: JSON.stringify(bemenet),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        }
-        ).then(
-            document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up"),
-            document.getElementById("like"+id).classList.add("bi-hand-thumbs-up-fill"),
-            document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
-            document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down"),
-            document.getElementById("jel"+id).classList.remove("bi-exclamation-square-fill"),
-            document.getElementById("jel"+id).classList.add("bi-exclamation-square"),
-            
-        )
-        
+        egyetertFetchTrue(egyetertett,id)
+      
+        document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up"),
+        document.getElementById("like"+id).classList.add("bi-hand-thumbs-up-fill"),
+        document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
+        document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down"),
+        document.getElementById("jel"+id).classList.remove("bi-exclamation-square-fill"),
+        document.getElementById("jel"+id).classList.add("bi-exclamation-square")
         
     } 
     else{
-        let bemenet = {
-            "bevitel1": egyetertett,
-            "bevitel2":id
-        }
-        fetch('http://localhost:3000/egyetert', {
-            method: "POST",
-            body: JSON.stringify(bemenet),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        }
-        ).then(
-            document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up-fill"),
-            document.getElementById("like"+id).classList.add("bi-hand-thumbs-up"),
-        )
+       
+        egyetertFetchFalse(egyetertett,id) 
+        document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up-fill"),
+        document.getElementById("like"+id).classList.add("bi-hand-thumbs-up")
         
+       
     }
-    
     
 
 }
+
+function egyetertFetchTrue(egyetertett,id){
+    let bemenet = {
+        "bevitel1": egyetertett+=1,
+        "bevitel2":id
+    }
+    fetch('http://localhost:3000/egyetert', {
+        method: "POST",
+        body: JSON.stringify(bemenet),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+}
+function egyetertFetchFalse(egyetertett,id){
+    let bemenet = {
+        "bevitel1": egyetertett,
+        "bevitel2":id
+    }
+    fetch('http://localhost:3000/egyetert', {
+        method: "POST",
+        body: JSON.stringify(bemenet),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+}
+
+
+
 function nemertegyet(nemegyet,id){
     
     className=document.getElementById("nemtetszik"+id).className;
-   
+    
     if(className=="bi bi-hand-thumbs-down")
     {
-        let bemenet = {
-            "bevitel1": nemegyet+1,
-            "bevitel2":id
-        }
-        fetch('http://localhost:3000/nemegyetert', {
-            method: "POST",
-            body: JSON.stringify(bemenet),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        }
-        ).then(
+       
+        nemertegyetFetchTrue(nemegyet,id)
         document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down"),
         document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down-fill"),
         document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up-fill"),
         document.getElementById("like"+id).classList.add("bi-hand-thumbs-up"),
         document.getElementById("jel"+id).classList.remove("bi-exclamation-square-fill"),
-        document.getElementById("jel"+id).classList.add("bi-exclamation-square"),
-        )
+        document.getElementById("jel"+id).classList.add("bi-exclamation-square")
+        
     }
     else{
-        let bemenet = {
-            "bevitel1": nemegyet,
-            "bevitel2":id
-        }
-        fetch('http://localhost:3000/nemegyetert', {
-            method: "POST",
-            body: JSON.stringify(bemenet),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        }).then(
-            document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
-            document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down"),
+        nemertegyetFetchFalse(nemegyet,id)
+        document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
+        document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down")
             
-        )
+        
     }
       
 }
+
+function nemertegyetFetchTrue(nemegyet,id)
+{
+    let bemenet = {
+        "bevitel1": nemegyet+1,
+        "bevitel2":id
+    }
+    fetch('http://localhost:3000/nemegyetert', {
+        method: "POST",
+        body: JSON.stringify(bemenet),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+}
+function nemertegyetFetchFalse(nemegyet,id)
+{
+    let bemenet = {
+        "bevitel1": nemegyet,
+        "bevitel2":id
+    }
+    fetch('http://localhost:3000/nemegyetert', {
+        method: "POST",
+        body: JSON.stringify(bemenet),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+}
+
 function jelent(jelentes,id)
 {
 let className=document.getElementById("jel"+id).className
 
 if(className=="bi bi-exclamation-square")
+{
+    jelentFetchTrue(jelentes,id)
+    document.getElementById("jel"+id).classList.remove("bi-exclamation-square"),
+    document.getElementById("jel"+id).classList.add("bi-exclamation-square-fill"),
+    document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
+    document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down"),
+    document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up-fill"),
+    document.getElementById("like"+id).classList.add("bi-hand-thumbs-up")
+    
+    
+}
+else{
+    jelentFetchFalse(jelentes,id)
+    document.getElementById("jel"+id).classList.remove("bi-exclamation-square-fill"),
+    document.getElementById("jel"+id).classList.add("bi-exclamation-square")
+    
+}
+}
+function jelentFetchTrue(jelentes,id)
 {
     let bemenet = {
         "bevitel1": jelentes+1,
@@ -189,17 +223,11 @@ if(className=="bi bi-exclamation-square")
         method: "POST",
         body: JSON.stringify(bemenet),
         headers: { "Content-type": "application/json; charset=UTF-8" }
-    }).then(
-        document.getElementById("jel"+id).classList.remove("bi-exclamation-square"),
-        document.getElementById("jel"+id).classList.add("bi-exclamation-square-fill"),
-        document.getElementById("nemtetszik"+id).classList.remove("bi-hand-thumbs-down-fill"),
-        document.getElementById("nemtetszik"+id).classList.add("bi-hand-thumbs-down"),
-        document.getElementById("like"+id).classList.remove("bi-hand-thumbs-up-fill"),
-        document.getElementById("like"+id).classList.add("bi-hand-thumbs-up"),
-    )
+    })
     
 }
-else{
+function jelentFetchFalse(jelentes,id)
+{
     let bemenet = {
         "bevitel1": jelentes,
         "bevitel2":id
@@ -208,12 +236,10 @@ else{
         method: "POST",
         body: JSON.stringify(bemenet),
         headers: { "Content-type": "application/json; charset=UTF-8" }
-    }).then(
-        document.getElementById("jel"+id).classList.remove("bi-exclamation-square-fill"),
-        document.getElementById("jel"+id).classList.add("bi-exclamation-square"),
-    )
+    })
+    
 }
-}
+
 function kommenteles(){
     let id=sessionStorage.getItem('id')
     let komment=document.getElementById("hozzaszolas").value;
