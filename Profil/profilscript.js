@@ -378,7 +378,8 @@ function havimax(){
     .then((response) => response.json())
     .then((responseJson) => {
         responseJson.map((item)=>{
-           max1 = item.max
+           var result = Math.round(item.max * 1) / 1; 
+           max1 = result
         })
         document.getElementById("maxkiadas").innerHTML=max1+"Ft"
 })

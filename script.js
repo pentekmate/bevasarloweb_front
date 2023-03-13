@@ -112,26 +112,6 @@ const observer6 = new IntersectionObserver(entries => {
 observer6.observe(document.querySelector('.kartyak'));
 
 //---------------------------------------------------------
-window.onscroll = function() {navbarbg()};
-function navbarbg(){
-
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    let navbar=document.getElementById("nav")
-    if(scrolled>0)
-    {
-        navbar.classList.remove("navvissza")
-        navbar.classList.add("nav")
-        
-       
-    }
-    else{
-        navbar.classList.remove("nav")
-        navbar.classList.add("navvissza")
-    }
-
-}
 
 
 checklogin()

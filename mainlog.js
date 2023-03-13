@@ -7,7 +7,7 @@ function logincheck() {
     if(felhasznalo)
     {
         document.getElementById("belepettfh").innerHTML = felhasznalo
-        document.getElementById("belepettfh").style.color = "rgb(18,18,18)";
+        document.getElementById("belepettfh").style.color = "rgb(1,194,154";
         document.getElementById("belepettfh").style.fontFamily = "sans-serif";
         document.getElementById("belepettfh").style.fontWeight = "600";
         document.getElementById("fhnev").innerHTML=felhasznalo
@@ -16,7 +16,7 @@ function logincheck() {
     else if(felhasznalolocal)
     {
         document.getElementById("belepettfh").innerHTML = felhasznalolocal
-        document.getElementById("belepettfh").style.color = "rgb(18,18,18)";
+        document.getElementById("belepettfh").style.color = "rgb(1,194,154)";
         document.getElementById("belepettfh").style.fontWeight = "600";
         document.getElementById("fhnev").innerHTML=felhasznalolocal
         getProfilId()
@@ -357,66 +357,7 @@ const observer2 = new IntersectionObserver(entries => {
 });
 observer2.observe(document.querySelector('.harmadik'));
 //-----------------------------NEGYEDIK-----------------------------------
-const square3 = document.querySelector('.jobboldalkep1');
-square.classList.remove('jobbkepanimacio');
 
-const observer3 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            square3.classList.add('jobbkepanimacio');
-            return;
-        }
-
-        square3.classList.remove('jobbkepanimacio');
-    });
-});
-observer3.observe(document.querySelector('.negyedik'));
-//----------------------------ÖTÖDIK-------------------------------------
-const square4 = document.querySelector('.baloldalkep2');
-square.classList.remove('balkepanimacio');
-
-const observer4 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            square4.classList.add('balkepanimacio');
-            return;
-        }
-
-        square4.classList.remove('balkepanimacio');
-    });
-});
-observer4.observe(document.querySelector('.otodik'));
-//--------------------------------PROGRESSBAR---------------------------------------
-window.onscroll = function () { myFunction() };
-
-function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
-window.onscroll = function() {navbarbg()};
-function navbarbg(){
-    let fhnev=document.getElementById("belepettfh")
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    let navbar=document.getElementById("nav")
-    if(scrolled>0)
-    {
-        navbar.classList.remove("navvissza")
-        fhnev.classList.remove("fhnevszinvissza")
-        navbar.classList.add("nav")
-        fhnev.classList.add("fhnevszin")
-    }
-    else{
-        navbar.classList.remove("nav")
-        fhnev.classList.remove("fhnevszin")
-        fhnev.classList.add("fhnevszinvissza")
-        navbar.classList.add("navvissza")
-    }
-
-}
 
 
 
