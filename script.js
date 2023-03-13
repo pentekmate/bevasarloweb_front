@@ -77,45 +77,7 @@ const observer2 = new IntersectionObserver(entries => {
     });
 });
 observer2.observe(document.querySelector('.harmadik'));
-//-----------------------------NEGYEDIK-----------------------------------
-const square3 = document.querySelector('.jobboldalkep1');
-square.classList.remove('jobbkepanimacio');
 
-const observer3 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            square3.classList.add('jobbkepanimacio');
-            return;
-        }
-
-        square3.classList.remove('jobbkepanimacio');
-    });
-});
-observer3.observe(document.querySelector('.negyedik'));
-//----------------------------ÖTÖDIK-------------------------------------
-const square4 = document.querySelector('.baloldalkep2');
-square.classList.remove('balkepanimacio');
-
-const observer4 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            square4.classList.add('balkepanimacio');
-            return;
-        }
-
-        square4.classList.remove('balkepanimacio');
-    });
-});
-observer4.observe(document.querySelector('.otodik'));
-//--------------------------------PROGRESSBAR---------------------------------------
-window.onscroll = function () { myFunction() };
-
-function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
 
 //---------------------------Kommentek--------------------------
 
@@ -133,7 +95,23 @@ const observer5 = new IntersectionObserver(entries => {
     });
 });
 observer5.observe(document.querySelector('.kommentek'));
+//---------------------------KARTYAK-----------------
+const square6 = document.querySelector('.kartyak');
+square.classList.remove('kartyakanim');
 
+const observer6 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            square6.classList.add('kartyakanim');
+            return;
+        }
+
+        square6.classList.remove('kartyakanim');
+    });
+});
+observer6.observe(document.querySelector('.kartyak'));
+
+//---------------------------------------------------------
 window.onscroll = function() {navbarbg()};
 function navbarbg(){
 

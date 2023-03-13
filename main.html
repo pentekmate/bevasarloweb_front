@@ -16,21 +16,17 @@
     
 
     <div class="fo">
-        <nav class="navbar  " id="nav" style="position: sticky; top: 0 ; z-index: 2;">
+        <nav class="navbar  " id="nav" style="position: sticky; top: 0 ; z-index: 4;">
             <div class="container-fluid">
                 <a class="navbar-item"
                 style="color: white; font-size: 40px; text-shadow: 2px 2px 4px #000000;font-weight: bold;text-decoration: none;"
                 href="#fel">Bevásárló listám</a>
                 <a class="navbar-brand regisztracio"
-                href="#regisztracio">Regisztráció</a>
-               
-                <a class="navbar-brand pontok" 
-                    href="#pontok">Pontok</a>
-
-               
+                href="#regisztracio">Regisztráció</a>   
                 <a class="navbar-brand listak"
                     href="#listak">Listák</a>
-       
+                <a class="navbar-brand pontok" 
+                    href="#pontok">Pontok</a>
                 <a class="navbar-brand komment"
                     href="#velemenyek">Vélemények</a>
                     <a class="bejelentkezesgomb gombok" 
@@ -38,8 +34,39 @@
               
             </div>
         </nav>
+        <div class="row bg-dark kartyak1 kartyakanim1" style="height: 30vw;margin-top:0px;">
+            <div class="col-6 d-flex justify-content-end align-items-center ">
+               
+                <div class="card bg-light" style="width: 28rem;height:30rem; box-shadow: 0px 0px 8px 1px #676464;">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title" style="color:rgb(0, 0, 0);text-align: center;font-weight: 700;">Tetszik az alkalmazás?</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Regisztrálj most!</h6>
+                     <div style="max-width: 30rem;" class="d-flex justify-content-center">
+                        <img width="70%" src="./kepek/logo.png" alt="">
+                     </div> 
+                    <div class="d-flex justify-content-center">
+                        <button class="cardgomb" style="margin-top:1rem">Regisztrálok</button>
+                    </div>
+                    </div>  
+                  </div>
+            </div>
+            <div class="col-6 d-flex align-items-center  justify-content-start">
+                <div class="card bg-dark" style="width: 28rem;height:30rem;box-shadow: 0px 0px 8px 1px #676464;">
+                    <div class="card-body bg-dark">
+                      <h5 class="card-title" style="color:rgb(255, 255, 255);text-align: center;font-weight: 700;">Használnád az alkalmazást?</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Töltsd le!</h6>
+                     <div style="max-width: 30rem;" class="d-flex justify-content-center">
+                        <img width="70%" src="./kepek/logo.png" alt="">
+                     </div> 
+                    <div class="d-flex justify-content-center">
+                        <button class="cardgomb" style="margin-top:1rem">Letöltés</button>
+                    </div>
+                    </div>  
+                  </div>
+            </div>
+        </div>
         <!--Első-->
-        <section style="margin-top: 100px;" id="regisztracio">
+        <section style="margin-top: 150px;" id="regisztracio">
             <div class="elso">
                 <div class="row justify-content-start baloldalkep balkepanimacio" id="balkep">
                     <div class="col-4 ">
@@ -48,11 +75,19 @@
                     <div class="col-4 baloldalszoveg balszoveg1 " id="balszoveg">
                         <h3 class="customcimsor">Regisztráció</h3>
                         <hr>
-                        <p style="margin-top: 1rem;font-family:'Courier New', Courier, monospace ;" id="szoveg">
-                           Ahhoz hogy használhasd az alkalmazást felhasználói fiókot kell létrehoznod.
-                           Később ezt a fiókot személyre szabhatod.
-                           És bármilyen másik eszközön használhatod.
+                        <p id="szoveg">
+                           Ahhoz hogy használhasd az alkalmazást felhasználói fiókot kell létrehoznod!
                         </p>
+                        <p style="font-size: 22px;font-weight: 800;color:rgb(36, 39, 43)">
+                           Később ennek nagy hasznát veheted, de még is hogyan?
+                           <hr>
+                        </p>
+                       
+                        <p class="tartalom-resz">
+                            Saját fiókod lehet,amit teljesen egyedire szabhatsz.
+                            Akár weben akár mobilon bármilyen eszközön keresztül jelentkezel be.
+                        </p>
+                       
                        <button class="gombok" id="reggomb"  title="Regisztrálok!">Regisztrálok!</button>
                     </div>
                 </div>
@@ -60,27 +95,28 @@
             </div>
         </section>
         <!--Második-->
-        <section style="margin-top: 10px;" id="listak">
+        <section style="margin-top: 100px;" id="listak">
             <div class="masodik">
                 <div class="row justify-content-end jobboldalkep jobbkepanimacio" id="jobbkep">
 
                     <div class="col-4">
+                        <h3 class="customcimsor">Listák</h3>
+                        <hr>
                         <p style="margin-top: 1rem;" id="szoveg">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
+                            Hozd létre saját listáidat és az alkalmazás segít a bevásárlásban!
+                        </p>
+                        <p class="tartalom-resz">
+                            Rengeteg termék közzül választhatsz, elnevezheted a listáidat, rendszerezheted őket
+                            és később az applikáció segíteni fog a bevásárlás folyamán. 
+                        </p>
+                        <p style="font-size: 22px;font-weight: 800;color:rgb(36, 39, 43)" > De hogy teszi ezt?</p>
+                        <hr>
+                        <p class="tartalom-resz">
+                            Bevásárlás során kategóriákra bontva láthatod termékeidet.
+                            Ha pedig készen vagy, elmentheted mennyit költöttél, később pedig vissza nézheted azt.
                         </p>
                     </div>
+
                     <div class="col-4">
                         <img src="phone1.png" id="rightimg" style="float: left;" class="img-fluid">
                     </div>
@@ -88,7 +124,7 @@
             </div>
         </section>
         <!--Harmadik-->
-        <section style="margin-top: 10px;" id="pontok">
+        <section style="margin-top: 100px;" id="pontok">
             <div class="harmadik">
                 <div class="row justify-content-start baloldalkep1 balkepanimacio" id="balkep">
 
@@ -96,103 +132,75 @@
                         <img src="phone1.png" id="leftimg" style="float: right;" class="img-fluid">
                     </div>
                     <div class="col-4">
-
+                        <h3 class="customcimsor">Pontok</h3>
+                        <hr>
                         <p style="margin-top: 1rem;" id="szoveg">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
+                            Bele gondoltál már milyen lenne ha vásárlásért kapnál jutalmakat?
+                        </p>
+                        <p style="font-size: 22px;font-weight: 800;color:rgb(36, 39, 43)" >Igen, De mégis hogyan?</p>
+                        <hr>
+                        <p class="tartalom-resz">
+                            Minden befejezett listádért kapsz,5pontot.
+                            Később ezeket a pontokat beválthatod kölünböző jutalmakra.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        <!--Negyedik-->
-        <section style="margin-top: 10px;" id="listak">
-            <div class="negyedik">
-                <div class="row justify-content-end jobboldalkep1 jobbkepanimacio" id="jobbkep">
-
-                    <div class="col-4">
-
-                        <p style="margin-top: 1rem;" id="szoveg">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
-                        </p>
-                    </div>
-                    <div class="col-4">
-                        <img src="phone1.png" id="rightimg" style="float: left;" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Ötödik-->
-        <section style="margin-top: 10px;" id="pontok">
-            <div class="otodik">
-                <div class="row justify-content-start baloldalkep2 balkepanimacio" id="balkep">
-                    <div class="col-4">
-                        <img src="phone1.png" id="leftimg" style="float: right;" class="img-fluid">
-                    </div>
-                    <div class="col-4">
-
-                        <p style="margin-top: 1rem;" id="szoveg">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+       
         <div class="push"></div>
-    </div>
+        
+    
+</div>
 
-    </div>
+<div class="container-fluid  min-vh-100 velemeny">
 
-    <div class="container-fluid  min-vh-100 bg-dark velemeny">
-
-        <section id="velemenyek">
-            <div class="row" style="padding-top:5rem">
-                <div class="col-12 d-flex flex-column justify-content-center ">
-                    <div class="align-self-center"><span class="fhVelemeny">Felhasználói vélemények</span>
-                        <div style="border-bottom: 2px solid white; width: 60%; margin: 0px auto;"></div>
-                    </div>
+    <section id="velemenyek">
+        <div class="row" style="padding-top:5rem">
+            <div class="col-12 d-flex flex-column justify-content-center ">
+                <div class="align-self-center"><span class="fhVelemeny">Felhasználói vélemények</span>
+                    <div style="border-bottom: 2px solid white; width: 60%; margin: 0px auto;"></div>
                 </div>
             </div>
+        </div>
 
-            <div id="megjelenit" class="kommentek kommentanim"></div>
-        </section>
+        <div id="megjelenit" class="kommentek kommentanim"></div>
+    </section>
+    <section >
+    <div class="row bg-dark kartyak kartyakanim" style="height: 30vw;margin-top: 50px;">
+        <div class="col-6 d-flex justify-content-end align-items-center">
+           
+            <div class="card bg-light" style="width: 28rem;height:30rem; box-shadow: 0px 0px 8px 1px #676464;">
+                <div class="card-body bg-light">
+                  <h5 class="card-title" style="color:rgb(0, 0, 0);text-align: center;font-weight: 700;">Tetszik az alkalmazás?</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Regisztrálj most!</h6>
+                 <div style="max-width: 30rem;" class="d-flex justify-content-center">
+                    <img width="70%" src="./kepek/logo.png" alt="">
+                 </div> 
+                <div class="d-flex justify-content-center">
+                    <button class="cardgomb" style="margin-top:1rem">Regisztrálok</button>
+                </div>
+                </div>  
+              </div>
+        </div>
+        <div class="col-6 d-flex align-items-center  justify-content-start">
+            <div class="card bg-dark" style="width: 28rem;height:30rem;box-shadow: 0px 0px 8px 1px #676464;">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title" style="color:rgb(255, 255, 255);text-align: center;font-weight: 700;">Használnád az alkalmazást?</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Töltsd le!</h6>
+                 <div style="max-width: 30rem;" class="d-flex justify-content-center">
+                    <img width="70%" src="./kepek/logo.png" alt="">
+                 </div> 
+                <div class="d-flex justify-content-center">
+                    <button class="cardgomb" style="margin-top:1rem">Letöltés</button>
+                </div>
+                </div>  
+              </div>
+        </div>
     </div>
+</section>
+</div>
+
 
 
     <script src="script.js"></script>

@@ -96,7 +96,10 @@ html{
     text-shadow: 0 0 7px white;
     border:0
 }
-
+.tartalom-resz{
+    font-size: 17px;
+    text-shadow: 2px 2px 4px #000000;
+}
 #leftimg:hover,#rightimg:hover{
     transform: scale(1.1);
 }
@@ -121,6 +124,30 @@ img{
     will-change: opacity, visibility;
 }
 .kommentek.kommentanim{
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+.kartyak{
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+.kartyak.kartyakanim{
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+.kartyak1{
+    opacity: 0;
+    transform: translateY(-20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+}
+.kartyak1.kartyakanim1{
     opacity: 1;
     transform: none;
     visibility: visible;
@@ -198,9 +225,71 @@ hr{
     text-decoration:none;
     font-size: 20px;
 }
+.cardgomb{
+    border: rgb(1,194, 154) 2px solid;
+    border-radius: 10px; 
+    padding: 5px; 
+    background-color: rgb(50,50,50); 
+    color: white;
+    text-decoration:none;
+    font-size: 20px;
+    box-shadow: 2px 0px 8px 1px #676464
+}
+.card:hover{
+    color:white;
+    transform: scale(1.1);
+}
+.card:hover::before{
+    transition-delay:0.2s ;
+
+  transform: scale(40);
+}
+.card {
+    border-radius: 10px;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.6s ease-in;
+    animation: forgatas 2s infinite ease-in normal both ;
+
+  }
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -15px;
+    background: rgb(1,194, 154);
+    height:220px;
+    width: 25px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.5s ease-out;
+  }
 
 
 
+@keyframes forgatas{
+    0%,50%,100%{
+        transform: rotate(0deg)
+    }
+    10%,60%{
+        transform: rotate(1deg)
+    }
+    20%,70%{
+        transform: rotate(0deg);
+    }
+    30%,80%{
+        transform: rotate(-1deg);
+    }
+    40%,90%{
+        transform: rotate(0deg);
+    }
+}
 
 @keyframes borderteszt {
     from{
