@@ -241,24 +241,13 @@ document.getElementById("regdatum").innerHTML=datum
 })
 }
 
-
-
-
-
-
-
-
-
-
 window.onscroll = function() {myFunction()};
 var header = document.getElementById("proba");
 var header2 =document.getElementById("proba1");
+var header3 =document.getElementById("proba2");
 var sticky = header.offsetTop+100;
 var sticky1=header2.offsetTop;
-
-
-console.log("asd",sticky)
-console.log("asd",sticky1)
+var sticky2=header3.offsetTop;
 
 function myFunction() {
     
@@ -280,9 +269,146 @@ function myFunction() {
         header2.classList.add("w-100")
         header2.style.borderRadius="15px"
       }
-    
-    
+      if (window.pageYOffset > sticky2) {
+        header3.classList.add("sticky");
+        header3.classList.remove("w-100")
+        header3.style.borderRadius="0px"
+      } else {
+        header3.classList.remove("sticky");
+        header3.classList.add("w-100")
+        header3.style.borderRadius="15px"
+      }
   }
-
-
 logincheck()
+
+function havikiadas(){
+    let osszeg =[];
+    let datum = [];
+    let bemenet = {
+        "bevitel1": sessionStorage.getItem('id')
+    }
+    fetch('http://localhost:3000/havikiadas', {
+    method: "POST",
+    body: JSON.stringify(bemenet),
+    headers: { "Content-type": "application/json; charset=UTF-8" }
+    }) 
+    .then((response) => response.json())
+    .then((responseJson) => {
+        responseJson.map((item)=>{
+            for (let i = 0; i < 1; i++) {
+                osszeg.push(item.ar) 
+                datum.push(item.honap)
+                console.log(osszeg)
+            }
+        })
+
+    var xValues = datum;
+    var yValues = osszeg;
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: "rgb(1, 194, 154)",
+            data: yValues,
+            
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: false,
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 20
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }   
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 20
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }   
+                }]
+            }
+            
+        }
+        
+    });
+    })
+}
+function haviatlag(){
+    let atlag1 =0;
+    let bemenet = {
+        "bevitel1": sessionStorage.getItem('id')
+    }
+    fetch('http://localhost:3000/atlagkoltes', {
+    method: "POST",
+    body: JSON.stringify(bemenet),
+    headers: { "Content-type": "application/json; charset=UTF-8" }
+    }) 
+    .then((response) => response.json())
+    .then((responseJson) => {
+        responseJson.map((item)=>{
+            var result = Math.round(item.atlag * 1) / 1; //returns 33.8
+            atlag1 = result
+        })
+        document.getElementById("haviatlag").innerHTML=atlag1+"Ft"
+})
+}
+
+function havimax(){
+    let max1 =0;
+    let bemenet = {
+        "bevitel1": sessionStorage.getItem('id')
+    }
+    fetch('http://localhost:3000/maxkoltes', {
+    method: "POST",
+    body: JSON.stringify(bemenet),
+    headers: { "Content-type": "application/json; charset=UTF-8" }
+    }) 
+    .then((response) => response.json())
+    .then((responseJson) => {
+        responseJson.map((item)=>{
+           max1 = item.max
+        })
+        document.getElementById("maxkiadas").innerHTML=max1+"Ft"
+})
+}
+function fioktorol(){
+    let bemenet = {
+        "bevitel1": sessionStorage.getItem('id')
+    }
+    console.log(bemenet)
+    fetch('http://localhost:3000/profiltorles', {
+    method: "DELETE",
+    body: JSON.stringify(bemenet),
+    headers: { "Content-type": "application/json; charset=UTF-8" }
+    }) 
+    .then(
+    sessionStorage.clear(),
+    localStorage.clear(),
+    window.location.href="../main.html")
+
+}
+function kilepes() {
+    localStorage.clear()
+    sessionStorage.clear()
+    window.location.href = "../main.html"
+}
+havikiadas()
+haviatlag()
+havimax()
+
+
+
+
+

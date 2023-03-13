@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
     <link rel="stylesheet" href="profilstyle.css">
     <title>Document</title>
 </head>
@@ -65,62 +66,45 @@
                   <div class="col-6 felsorolaselemek d-flex justify-content-end" style="padding-right:10rem"><span id="regdatum"></span></div>
               </div>
           </div>
-          <div class="p-5 w-50">
-            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
+          <div class="p-2 row align-items-center bd-highlight bg-dark w-100" id="proba2" style="margin-left: 1rem;margin-right:1rem;border-radius: 10px;">
+            <div class="col-12 d-flex flex-row">
+              <div class="d-flex flex-column" style="border-radius: 50px;">
+                <div class="d-flex align-self-center justify-content-center" style="border-radius:50px;width: 50px;text-align: center;background-color: rgb(1, 194, 154);" ><i style="font-size: 2rem;" class="bi bi-cash"></i></div>
+              </div>
+              <div class="d-flex flex-column align-self-center justify-content-center kozep">
+               <h5 class="h5">Havi kiadások</h5>
+              </div>
+            </div>       
+          </div>
+          <div class="p-5 w-100">
+            <canvas id="myChart" style="width:100vw;max-width:100%"></canvas>
+            <div class="row align-items-center" style="padding-top: 5%">
+              <div class="col-6  felsorolaselemek" >Havi átlag kiadás</div>
+              <div class="col-6 felsorolaselemek d-flex justify-content-end" style="padding-right:10rem"><span id="haviatlag"></span></div>
+            </div>
+            <div class="row align-items-center" style="padding-top: 5%">
+              <div class="col-6  felsorolaselemek" >Legnagyobb kiadás</div>
+              <div class="col-6 felsorolaselemek d-flex justify-content-end" style="padding-right:10rem"><span id="maxkiadas"></span></div>
+            </div>
+          </div>
+          <div class="p-2 row align-items-center bd-highlight bg-dark w-100" id="proba3" style="margin-left: 1rem;margin-right:1rem;border-radius: 10px;">
+            <div class="col-12 d-flex flex-row">
+              <div class="d-flex flex-column" style="border-radius: 50px;">
+                <div class="d-flex align-self-center justify-content-center" style="border-radius:50px;width: 50px;text-align: center;background-color: rgb(1, 194, 154);" ><i style="font-size: 2rem;" class="bi bi-person"></i></div>
+              </div>
+              <div class="d-flex flex-column align-self-center justify-content-center kozep">
+               <h5 class="h5">Fiók</h5>
+              </div>
+            </div>       
+          </div>
+          <div class="p-5 w-100">
+            <div class="row align-items-center">
+              <div class="col-6  felsorolaselemek" ><button style="margin-top: 1rem;" type="submit" class="gomb" onclick="kilepes()">Kijelentkezés</button></div>
+              <div class="col-6 felsorolaselemek d-flex justify-content-end" style="padding-right:10rem"><button style="margin-top: 1rem;" type="submit" class="gomb" onclick="fioktorol()">Fiók törlése</button></div>
+            </div>
+              
               
           </div>
-       
           
            
         </div>
@@ -175,21 +159,9 @@
                
               </div>
             </div>
-         
-        
-   
+            
 
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
