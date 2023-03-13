@@ -2,6 +2,7 @@ let felhasznalo="";
 function belepes(){
     felhasznalo=document.getElementById("belepesfelhasznalonev").value;
     let jelsz=document.getElementById("belepesjelszo").value;
+    let check=document.getElementById("checkbox").checked;
     
     if(felhasznalo || jelsz){
         let bemenet={
@@ -23,6 +24,9 @@ function belepes(){
                 else {
                   sessionStorage.setItem("felhasznalo",felhasznalo)
                   window.location.href = "mainlog.html"
+                  if(check==true){
+                    localStorage.setItem('felhasznalo',felhasznalo)
+                  }
                 }
             }).then(getProfil())
             .catch((error) => {

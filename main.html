@@ -13,61 +13,50 @@
 </head>
 
 <body>
-    <nav class="navbar bg-dark " style="position: sticky; top: 0 ; z-index: 2;">
-        <div class="container-fluid">
-            <a class="navbar-brand">
-                <img src="b-logo.png" alt="Logo" id="logo" class="d-inline-block align-text-top">
-            </a>
-            <a class="navbar-brand komment" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;"
-                href="#velemenyek">Vélemények</a>
-            <a class="navbar-brand pontok" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;"
-                href="#pontok">Pontok</a>
-            <a class="navbar-brand"
-                style="color: white; font-size: 40px; text-shadow: 2px 2px 4px #000000;font-weight: bold;"
-                href="#fel">Bevásárló
-                listám</a>
-            <a class="navbar-brand regisztracio"
-                style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;"
-                href="#regisztráció">Regisztráció</a>
-            <a class="navbar-brand listak" style="color: white; font-size: 20px; text-shadow: 2px 2px 4px #000000;"
-                href="#listak">Listák</a>
-            <span id="belepettfh" style="font-size: 20px;"></span>
-            <form class="d-flex" id="belepve">
-                <a class="bejelentkezesgomb" style="border: rgb(1,194, 154) 2px solid; border-radius: 10px; padding: 5px; background-color: rgb(50,50,50); color: white;text-decoration: none;"
-                    type="submit" href="login.html">Bejelentkezés</a>
-            </form>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
-    </nav>
+    
 
     <div class="fo">
+        <nav class="navbar  " id="nav" style="position: sticky; top: 0 ; z-index: 2;">
+            <div class="container-fluid">
+                <a class="navbar-item"
+                style="color: white; font-size: 40px; text-shadow: 2px 2px 4px #000000;font-weight: bold;text-decoration: none;"
+                href="#fel">Bevásárló listám</a>
+                <a class="navbar-brand regisztracio"
+                href="#regisztracio">Regisztráció</a>
+               
+                <a class="navbar-brand pontok" 
+                    href="#pontok">Pontok</a>
+
+               
+                <a class="navbar-brand listak"
+                    href="#listak">Listák</a>
+       
+                <a class="navbar-brand komment"
+                    href="#velemenyek">Vélemények</a>
+                    <a class="bejelentkezesgomb gombok" 
+                        type="submit" href="login.html">Bejelentkezés</a>
+              
+            </div>
+        </nav>
         <!--Első-->
-        <section style="margin-top: 10px;" id="regisztráció">
+        <section style="margin-top: 100px;" id="regisztracio">
             <div class="elso">
                 <div class="row justify-content-start baloldalkep balkepanimacio" id="balkep">
                     <div class="col-4 ">
                         <img src="phone1.png" id="leftimg" style="float: right;" class="img-fluid">
                     </div>
                     <div class="col-4 baloldalszoveg balszoveg1 " id="balszoveg">
-                        <p style="margin-top: 1rem;" id="szoveg">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took
-                            a galley of type and scrambled it to make a type specimen book. It has survived not only
-                            five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and
-                            more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem
-                            Ipsum.
+                        <h3 class="customcimsor">Regisztráció</h3>
+                        <hr>
+                        <p style="margin-top: 1rem;font-family:'Courier New', Courier, monospace ;" id="szoveg">
+                           Ahhoz hogy használhasd az alkalmazást felhasználói fiókot kell létrehoznod.
+                           Később ezt a fiókot személyre szabhatod.
+                           És bármilyen másik eszközön használhatod.
                         </p>
+                       <button class="gombok" id="reggomb"  title="Regisztrálok!">Regisztrálok!</button>
                     </div>
                 </div>
+
             </div>
         </section>
         <!--Második-->
@@ -195,7 +184,7 @@
         <section id="velemenyek">
             <div class="row" style="padding-top:5rem">
                 <div class="col-12 d-flex flex-column justify-content-center ">
-                    <div class="align-self-center bg-dark"><span class="fhVelemeny">Felhasználói vélemények</span>
+                    <div class="align-self-center"><span class="fhVelemeny">Felhasználói vélemények</span>
                         <div style="border-bottom: 2px solid white; width: 60%; margin: 0px auto;"></div>
                     </div>
                 </div>

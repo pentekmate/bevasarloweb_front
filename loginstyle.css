@@ -18,3 +18,19 @@ flex-direction: column;
     font-size: large;
     font-weight: 700;
 }
+.gomb{
+    border:0;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s;
+    font-weight: 600;
+    background-color: white;
+    color:rgb(1,194,154)
+}
+.gomb:hover{
+    transform: scale(1.1);
+    color:white;
+    background-color: rgb(1,194,154);
+    box-shadow: 8px 8px 6px #000000;
+}

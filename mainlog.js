@@ -1,22 +1,47 @@
 let id = "";
 let felhasznalo = "";
-
+let felhasznalolocal=""
 function logincheck() {
     felhasznalo = sessionStorage.getItem("felhasznalo");
-    document.getElementById("belepettfh").innerHTML = felhasznalo
-    document.getElementById("belepettfh").style.color = "rgb(1,194,154)";
-    document.getElementById("fhnev").innerHTML=felhasznalo
-    console.log(felhasznalo)
-    
+    felhasznalolocal=localStorage.getItem("felhasznalo")
+    if(felhasznalo)
+    {
+        document.getElementById("belepettfh").innerHTML = felhasznalo
+        document.getElementById("belepettfh").style.color = "rgb(18,18,18)";
+        document.getElementById("belepettfh").style.fontFamily = "sans-serif";
+        document.getElementById("belepettfh").style.fontWeight = "600";
+        document.getElementById("fhnev").innerHTML=felhasznalo
+        getProfilId()
+    }
+    else if(felhasznalolocal)
+    {
+        document.getElementById("belepettfh").innerHTML = felhasznalolocal
+        document.getElementById("belepettfh").style.color = "rgb(18,18,18)";
+        document.getElementById("belepettfh").style.fontWeight = "600";
+        document.getElementById("fhnev").innerHTML=felhasznalolocal
+        getProfilId()
+    }
+    else{
+        window.location.href='../main.html'
+    }   
 }
 function kilepes() {
+    localStorage.clear()
     sessionStorage.clear()
     window.location.href = "main.html"
 }
 
 function getProfilId() {
+    let fh=""
+    if(felhasznalo)
+    {
+        fh=felhasznalo
+    }
+    else{
+        fh=felhasznalolocal
+    }
     let bemenet = {
-        "bevitel1": felhasznalo
+        "bevitel1": fh
     }
     fetch('http://localhost:3000/getid', {
         method: "POST",
@@ -68,19 +93,21 @@ function kommentek(tomb) {
     let sz = "";
     console.log(tomb)
     tomb.map((item) => {
-        sz += '<div class="row justify-content-center" style="padding-top: 5rem;">'
-        sz+='  <div class="col-2"></div>    '
-        sz += '<div class="col-2 bg-dark  position-relative" >'
-        sz += '<div style="background-color:red;width:80px;height:80px;border-radius:50px" class="bg-secondary"> <img src="Kepek/' + item.felhasznalo_kep_id + '.png"  style="width:80px;height:80px;border-radius: 50px;" alt=""> <span  class="position-absolute bottom-80 start-50" style="color:rgb(1,194,154);font-weight:600;">' + item.felhasznalo_nev + '</span> </div>'
+        sz += '<div class="row justify-content-center w-50" style="padding-top: 5rem;margin-left:auto;margin-right:auto;border-radius:15px;">'
+        sz +='  <div class="col-1"></div>    '
+        sz += '<div class="col-2 d-flex justify-content-end  position-relative" >'
+        sz += '<div style="background-color:red;width:80px;height:80px;border-radius:50px" class="bg-secondary"> <img src="Kepek/' + item.felhasznalo_kep_id + '.png"  style="width:80px;height:80px;border-radius: 50px;" alt="">  </div>'
         sz += '</div>'
-        sz += '<div class="col-4 bg-secondary min-vh-20 position-relative" style="border-radius: 5px;">'
-        sz += '<p  style="font-weight:400;font-size:16px">' + item.wm_szoveg + ' </p>'
+        sz += '<div class="col-7 bg-secondary position-relative" style="border-radius: 5px;" >'
+        sz+='<span  class="position-absolute bottom-100 " style="color:rgb(1,194,154);font-weight:600;">' + item.felhasznalo_nev + '</span>'
+        sz += '<span  style="font-weight:400;font-size:16px;margin-top:10px">' + item.wm_szoveg + ' </span>'
         if(item.felhasznalo_id==fhid){
-            sz+='<span  class="position-absolute top-0 start-100"  style="color:rgb(1,194,154)"><button title="Törlés" onclick="kommenttorles('+item.id+')" class="bg-dark" style="border:0"><i style="color:red;" class="bi bi-trash3-fill"></i></button></span>'
+            sz+='<span  class="position-absolute top-0 end-0"  style="color:rgb(1,194,154)"><button title="Törlés" onclick="kommenttorles('+item.id+')" style="border:0;background-color:transparent; background-repeat: no-repeat;"><i style="color:red;font-size:1.1rem" class="bi bi-trash3-fill"></i></button></span>'
             }
         sz += '<span  class="position-absolute bottom-0 end-0"  style="color:rgb(1,194,154)">' + item.wm_datum + '</span>'
         sz += '</div>'
-        sz += '<div class="col-2 bg-dark "><div class="d-flex flex-row bd-highlight mb-3"> <div class="p-2 bd-highlight" > <button onclick="egyetert('+item.wm_egyetertett+','+item.id+')" id="egyet'+item.id+'" class="bg-dark" style="border:0" title="Egyetértek"> <i id="like'+item.id+'" style="color: green;"  class="bi bi-hand-thumbs-up"></i></div > </button><div class="p-2 bd-highlight"><button onclick="nemertegyet('+item.wm_nemertett_egyett+','+item.id+')" id="nemegyet'+item.id+'" title="Nem értek egyet" class="bg-dark" style="border:0"> <i id="nemtetszik'+item.id+'" style="color:red" class="bi bi-hand-thumbs-down"></i> </button></div><div class="p-2 bd-highlight"><button onclick="jelent('+item.wm_jelentett+','+item.id+')" id="jelentett" class="bg-dark" title="Jelentem" style="border:0"><i id="jel'+item.id+'" style="color:yellow" class="bi bi-exclamation-square"></i></button></div></div ></div>'
+        sz += '<div class="col-1"><div class="d-flex flex-row bd-highlight mb-3"> <div class="p-2 bd-highlight" > <button onclick="egyetert('+item.wm_egyetertett+','+item.id+')" id="egyet'+item.id+'" style="border:0;background-color:transparent; background-repeat: no-repeat;" title="Egyetértek"> <i id="like'+item.id+'" style="color: green;font-size:1.3rem"  class="bi bi-hand-thumbs-up"></i></div > </button><div class="p-2 bd-highlight"><button onclick="nemertegyet('+item.wm_nemertett_egyett+','+item.id+')" id="nemegyet'+item.id+'" title="Nem értek egyet" style="border:0;background-color:transparent; background-repeat: no-repeat;"> <i id="nemtetszik'+item.id+'" style="color:red;font-size:1.3rem" class="bi bi-hand-thumbs-down"></i> </button></div><div class="p-2 bd-highlight"><button onclick="jelent('+item.wm_jelentett+','+item.id+')" id="jelentett" title="Jelentem" style="border:0;background-color:transparent; background-repeat: no-repeat;"><i id="jel'+item.id+'" style="color:yellow;font-size:1.3rem" class="bi bi-exclamation-square"></i></button></div></div ></div>'
+        sz +='<div class="col-1"></div>'
         sz += '</div>'
     })
     document.getElementById("megjelenit").innerHTML = sz
@@ -368,10 +395,32 @@ function myFunction() {
     var scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
 }
+window.onscroll = function() {navbarbg()};
+function navbarbg(){
+    let fhnev=document.getElementById("belepettfh")
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    let navbar=document.getElementById("nav")
+    if(scrolled>0)
+    {
+        navbar.classList.remove("navvissza")
+        fhnev.classList.remove("fhnevszinvissza")
+        navbar.classList.add("nav")
+        fhnev.classList.add("fhnevszin")
+    }
+    else{
+        navbar.classList.remove("nav")
+        fhnev.classList.remove("fhnevszin")
+        fhnev.classList.add("fhnevszinvissza")
+        navbar.classList.add("navvissza")
+    }
+
+}
 
 
 
 logincheck()
-getProfilId()
+
 kommentlekeres()
 

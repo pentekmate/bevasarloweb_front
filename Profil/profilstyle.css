@@ -4,6 +4,19 @@
     color:white;
     
 }
+body{
+   max-width: 100%;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .felsorolaselemek{
     font-size: 20px;
     font-weight: 600;
@@ -18,7 +31,7 @@
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-image: linear-gradient(rgb(11, 28, 25),rgb(1,194,154))!important;
+   
     background-size: cover;
 }
 .sticky {
@@ -26,5 +39,21 @@
     top: 0;
     width: 50%;
     z-index: 1;
+    animation: teszt 1s ease  1 normal both;
+}
 
-  }
+
+@keyframes teszt {
+   0%,20%
+    {
+    transform: translateY(10px);
+   }
+   
+   50%,70%{
+    transform: translateY(-15px);
+   }
+   100%{
+    transform: translateY(0px);
+   }
+    
+}

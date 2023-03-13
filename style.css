@@ -10,8 +10,9 @@ html{
     min-height: 100%;
     margin: 0 auto -50px;
 }
+
+
 #profilkep{
-    background-color: rgb(50,50,50);
     border-radius: 50px;
 }
 #logo{
@@ -67,15 +68,35 @@ html{
 #profilkep:hover{
     transform: scale(1.2); 
 }
-.pontok,.komment,.listak,.regisztracio,#logo,.bejelentkezesgomb,#profilkep{
+.navbar-brand{
+    color:white;
+    font-weight: 550;
+    text-shadow: 2px 2px 10px #000000;
+    font-size:22px;
+   
+    font-family: sans-serif;
+}
+.pontok,.komment,.listak,.regisztracio,#logo,.bejelentkezesgomb,#profilkep,#udv{
     transition: all 0.3s;
    
 }
-.pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover,.bejelentkezesgomb:hover{
-    background-color:rgb(1,194,154);
-    border-radius: 10px;
+.pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover,.bejelentkezesgomb:hover,#udv:hover{
+    animation: borderteszt 1s ease 1 normal both;
+    color:white;
     transform: translateY(-10px);
+    text-shadow:0 0 7px #ffffff;
 }
+#reggomb{
+    transition: all 0.3s;
+}
+#reggomb:hover{
+    transform: translateY(-10px);
+    background-color: rgb(74, 201, 74);
+    color:white;
+    text-shadow: 0 0 7px white;
+    border:0
+}
+
 #leftimg:hover,#rightimg:hover{
     transform: scale(1.1);
 }
@@ -110,13 +131,20 @@ img{
 #balszoveg{animation-timing-function: ease;}
 
 body{
+    height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
+    position: relative;
+
+}
+
+.fo{
     background-image: linear-gradient(rgb(1,194,154),rgb(33,37,41))!important;
     background-size: cover;
+ 
 }
 body::-webkit-scrollbar{
     display: none;
@@ -125,22 +153,105 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.progress-container {
-    margin-bottom: 0 !important;
-    width: 100%;
-    height: 5px;
-    background: rgb(33,37,41);
-    padding-bottom: 0%;
-    box-shadow: 1px 3px 2px 1px rgb(50,50,50);
-}
+
 .navbar{
     padding-bottom: 0;
 }
-.progress-bar {
-    height: 8px;
-    background: rgb(1,194,154);
-    width: 0%;
+
+
+.nav{
+    animation: hatter 0.3s ease-in  1 normal both;
 }
+.navvissza{
+    animation: hattervissza 0.3s ease  1 normal both;
+}
+.fhnevszin{
+    animation: szin 0.3s ease-in 1s 1 normal both;
+}
+.fhnevszinvissza{
+    animation: szinvissza 0.3s ease-in 1s 1 normal both;
+}
+.velemeny{
+    background-image: linear-gradient(rgb(36, 39, 43),rgb(1,194,154))!important;
+}
+.customcimsor{
+    font-weight: bolder;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+p{
+    font-weight: 600;
+}
+hr{
+  width:50%;
+  text-align:left;
+  margin-left:0;
+  color:black;
+  background-color:gray;
+}
+.gombok{
+    border: rgb(1,194, 154) 2px solid;
+    border-radius: 10px; 
+    padding: 5px; 
+    background-color: rgb(50,50,50); 
+    color: white;
+    text-decoration:none;
+    font-size: 20px;
+}
+
+
+
+
+@keyframes borderteszt {
+    from{
+        border-bottom: 0;
+    }
+    to{
+        border-bottom: #ffffff;
+        border-bottom-width: 2px;
+        border-bottom-style: groove;
+    }
+    
+}
+
+@keyframes szin{
+    0%{
+        color:rgb(18,18,18)
+    }
+    100%{
+        color:rgb(1,194,154)
+    }
+}
+@keyframes szinvissza{
+    0%{
+        color:rgb(1,194,154)
+       
+    }
+    100%{
+        color:rgb(18,18,18)
+    }
+}
+
+@keyframes hatter {
+    0%{
+
+    }
+    100%{
+        background-color: rgb(33,37,41);
+    }
+    
+}
+@keyframes hattervissza {
+    0%{
+        background-color: rgb(33,37,41);
+    }
+    100%{
+        
+    }
+    
+}
+
+
 @keyframes jobbkepanim {
     0%   { opacity: 0; }
     20%   { opacity: 0; }

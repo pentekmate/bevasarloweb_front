@@ -1,20 +1,53 @@
 let felhasznalo=""
+let felhasznalolocal=""
 let x=0;
 let fhid=0
 let toltes=true
 function logincheck() {
     felhasznalo = sessionStorage.getItem("felhasznalo");
-    document.getElementById("fh").innerHTML=felhasznalo
-    document.getElementById("fh").style.color="rgb(1,194,154)"
-    document.getElementById("fh1").innerHTML='<button  data-bs-toggle="modal" data-bs-target="#exampleModal1" style="border:0"><span  class="position-absolute top-0 start-100 translate-middle  badge" ><i id="toll" class="bi bi-pen-fill" style="font-size:1rem;padding-bottom: 50px;color:rgb(1,194,154)"></i></span></button>'+felhasznalo
-    document.getElementById("toll").style.color="rgb(1,194,154)"
+    felhasznalolocal=localStorage.getItem("felhasznalo");
+    if(felhasznalo)
+    {
+        document.getElementById("fh").innerHTML=felhasznalo
+        document.getElementById("fh").style.color="rgb(1,194,154)"
+        document.getElementById("fh1").innerHTML='<button  data-bs-toggle="modal" data-bs-target="#exampleModal1" style="border:0"><span  class="position-absolute top-0 start-100 translate-middle  badge" ><i id="toll" class="bi bi-pen-fill" style="font-size:1rem;padding-bottom: 50px;color:rgb(1,194,154)"></i></span></button>'+felhasznalo
+        document.getElementById("toll").style.color="rgb(1,194,154)"
+        
+        getRegisztracio()
+
+        getProfilId()
+    }
+    else if(felhasznalolocal)
+    {
+        document.getElementById("fh").innerHTML=felhasznalolocal
+        document.getElementById("fh").style.color="rgb(1,194,154)"
+        document.getElementById("fh1").innerHTML='<button  data-bs-toggle="modal" data-bs-target="#exampleModal1" style="border:0"><span  class="position-absolute top-0 start-100 translate-middle  badge" ><i id="toll" class="bi bi-pen-fill" style="font-size:1rem;padding-bottom: 50px;color:rgb(1,194,154)"></i></span></button>'+felhasznalolocal
+        document.getElementById("toll").style.color="rgb(1,194,154)"
+        
+        getRegisztracio()
+
+        getProfilId()
+    }
+    else{
+        window.location.href='../login.html'
+    }
+   
     fhid=sessionStorage.getItem('id')
     console.log(felhasznalo)
     console.log(fhid)
 }
 function getProfilId() {
+    let fh=""
+    if(felhasznalo)
+    {
+        fh=felhasznalo
+    }
+    else
+    {
+        fh=felhasznalolocal
+    }
     let bemenet = {
-        "bevitel1": felhasznalo
+        "bevitel1": fh
     }
     fetch('http://localhost:3000/getid', {
         method: "POST",
@@ -252,6 +285,4 @@ function myFunction() {
   }
 
 
-getRegisztracio()
 logincheck()
-getProfilId()
