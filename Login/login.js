@@ -23,7 +23,7 @@ function belepes(){
                 }
                 else {
                   sessionStorage.setItem("felhasznalo",felhasznalo)
-                  window.location.href = "mainlog.html"
+                  window.location.href = "../mainlog.html"
                   if(check==true){
                     localStorage.setItem('felhasznalo',felhasznalo)
                   }
