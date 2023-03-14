@@ -16,8 +16,30 @@
 <body>
   
     <div class="fo">
-        <nav class="navbar" id="nav" style="position: sticky; top: 0 ; z-index: 2;background-color: #000000;">
+         <!--MOBIL SIDEBAR-->
+         <div class="container-fluid p3 d-block d-lg-none" id="mobilside" >
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <a class="navbar-item" style="text-decoration: none;color: white; font-size: 25px; text-shadow: 2px 2px 4px #000000;font-weight: bold;" href="#fel">Bevásárlólistám</a>
+                <a href="#"><div id="sidebarprof"></div></a>
+                <a> <span id="udv" style="color:white;font-size: 20px; font-family: sans-serif;">Üdv itt! <span id="belepettfh" style="font-size: 20px;"></span> </span></a>
+                <a class="sidebar-mobil"  href="#regisztracio">Regisztráció</a>
+           
+                <a class="sidebar-mobil"  href="#pontok">Pontok</a>
+         
+                <a class="sidebar-mobil" href="#listak">Listák</a>
                 
+               
+                <a class="sidebar-brand "  href="#velemenyek">Vélemények</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer;color:#ffffff" onclick="openNav()">&#9776;</span>
+        </div>
+
+
+        <!--PC NAVBAR-->
+        <nav class="navbar  d-none d-lg-block" id="nav" style="position: sticky; top: 0 ; z-index: 4;background-color: #000000;">
+            <div class="container-fluid"> 
                 <a class="navbar-item active" style="text-decoration: none;color: white; font-size: 40px; text-shadow: 2px 2px 4px #000000;font-weight: bold;" href="#fel">Bevásárló
                     listám</a>
                 <a class="navbar-brand regisztracio"  href="#regisztracio">Regisztráció</a>
@@ -40,15 +62,14 @@
                       </div>
                   
                
-           
+           </div>
           
         </nav>
         
-        <div class="row  kartyak1 kartyakanim1" style="height: 30vw;background-color: #000000;">
-            <div class="col-6 d-flex justify-content-end align-items-center ">
-               
-                <div class="card bg-light" style="width: 28rem;height:30rem; box-shadow: 0px 0px 8px 1px #676464;">
-                    <div class="card-body bg-light">
+        <div class="row   kartyak1 kartyakanim1" style="background-color: #000000;" >
+            <div id="felsokartya" class="col-lg-6 col-sm-12 col-md-12  d-flex justify-content-end align-items-center ">
+                <div class="card " >
+                    <div class="card-body">
                       <h5 class="card-title" style="color:rgb(0, 0, 0);text-align: center;font-weight: 700;">Tetszik az alkalmazás?</h5>
                       <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Regisztrálj most!</h6>
                      <div style="max-width: 30rem;" class="d-flex justify-content-center">
@@ -60,9 +81,8 @@
                     </div>  
                   </div>
             </div>
-   
-            <div class="col-6 d-flex align-items-center  justify-content-start">
-                <div class="card bg-dark" style="width: 28rem;height:30rem;box-shadow: 0px 0px 8px 1px #676464;">
+            <div  class="col-lg-6 col-sm-12 col-md-12 d-flex align-items-center ">
+                <div class="card bg-dark">
                     <div class="card-body bg-dark">
                       <h5 class="card-title" style="color:rgb(255, 255, 255);text-align: center;font-weight: 700;">Használnád az alkalmazást?</h5>
                       <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Töltsd le!</h6>
@@ -84,13 +104,13 @@
             </svg>
         </div>
         <!--Első-->
-        <section style="margin-top: 150px;" id="regisztracio">
+        <div class="mt-lg-5 p-5 mt-sm-5"  id="regisztracio">
             <div class="elso">
                 <div class="row justify-content-start baloldalkep balkepanimacio" id="balkep">
-                    <div class="col-4 ">
+                    <div class="col-lg-4 d-none d-lg-block ">
                         <img src="phone1.png" id="leftimg" style="float: right;" class="img-fluid">
                     </div>
-                    <div class="col-4 baloldalszoveg balszoveg1 " id="balszoveg">
+                    <div class="col-lg-4 col-sm-2 col-md-4 baloldalszoveg balszoveg1 " id="balszoveg">
                         <h3 class="customcimsor">Regisztráció</h3>
                         <hr>
                         <p id="szoveg">
@@ -106,18 +126,18 @@
                             Akár weben akár mobilon bármilyen eszközön keresztül jelentkezel be.
                         </p>
                        
-                      
+                       <button class="gombok" id="reggomb"  title="Regisztrálok!">Regisztrálok!</button>
                     </div>
                 </div>
 
             </div>
-        </section>
-        <!--Második-->
-        <section style="margin-top: 100px;" id="listak">
+        </div>
+         <!--Második-->
+         <div class="mt-lg-5 p-5 mt-sm-5" id="listak">
             <div class="masodik">
                 <div class="row justify-content-end jobboldalkep jobbkepanimacio" id="jobbkep">
 
-                    <div class="col-4">
+                    <div class="col-lg-4 col-sm-2 col-md-4">
                         <h3 class="customcimsor">Listák</h3>
                         <hr>
                         <p style="margin-top: 1rem;" id="szoveg">
@@ -135,27 +155,27 @@
                         </p>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-4 d-none d-lg-block">
                         <img src="phone1.png" id="rightimg" style="float: left;" class="img-fluid">
                     </div>
                 </div>
             </div>
-        </section>
+         </div>
         <!--Harmadik-->
-        <section style="margin-top: 100px;" id="pontok">
+        <div class="mt-lg-5 p-5 mt-sm-5" id="pontok">
             <div class="harmadik">
                 <div class="row justify-content-start baloldalkep1 balkepanimacio" id="balkep">
 
-                    <div class="col-4">
+                    <div class="col-lg-4 col-lg-2 d-none d-lg-block">
                         <img src="phone1.png" id="leftimg" style="float: right;" class="img-fluid">
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-lg-2 col-md-4">
                         <h3 class="customcimsor">Pontok</h3>
                         <hr>
                         <p style="margin-top: 1rem;" id="szoveg">
                             Bele gondoltál már milyen lenne ha vásárlásért kapnál jutalmakat?
                         </p>
-                        <p style="font-size: 22px;font-weight: 800;color:rgb(36, 39, 43)" >Igen, De mégis hogyan?</p>
+                        <p style="font-size: 22px;font-weight: 800;color:rgb(0, 0, 0)" >Igen, De mégis hogyan?</p>
                         <hr>
                         <p class="tartalom-resz">
                             Minden befejezett listádért kapsz,5pontot.
@@ -164,10 +184,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
         <div class="push"></div>
-    </div>
+
     <div style="background-color: rgb(0, 0, 0);min-width: 100vw;min-height:10vh;"></div>
     <div class="container-fluid  min-vh-100  velemeny">
         <div class="custom-shape-divider-top-1678715010">
@@ -175,10 +194,12 @@
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
             </svg>
         </div>
-        <section id="velemenyek" style="padding-top: 5vh;">
+        <section id="velemenyek" style="padding-top: 5rem;">
             <div class="row" style="padding-top:5rem">
                 <div class="col-12 d-flex flex-column justify-content-center ">
-                    <div class="align-self-center"><span class="fhVelemeny" style="text-shadow: 5px 5px 4px #000000;font-family: sans-serif;z-index: 100;">Felhasználói vélemények</span></div>
+                    <div class="align-self-center position-relative"><span class="position-relative fhVelemeny">Felhasználói vélemények</span>
+                        <div style="border-bottom: 2px solid white; width: 60%; margin: 0px auto;"></div>
+                    </div>
                 </div>
             </div>
             
@@ -230,13 +251,12 @@
     </svg>
 </div>
 <section style="margin-top: 7rem;" >
-    <div class="row  kartyak kartyakanim" style="height: 30vw;margin-top: 50px;background-color: #000000;">
-        <div class="col-6 d-flex justify-content-end align-items-center">
-           
-            <div class="card bg-light" style="width: 28rem;height:30rem; box-shadow: 0px 0px 8px 1px #676464;">
-                <div class="card-body bg-light">
+    <div class="row   kartyak1 kartyakanim1" style="background-color: #000000;" >
+        <div id="felsokartya" class="col-lg-6 col-sm-12 col-md-12  d-flex justify-content-end align-items-center ">
+            <div class="card " >
+                <div class="card-body">
                   <h5 class="card-title" style="color:rgb(0, 0, 0);text-align: center;font-weight: 700;">Tetszik az alkalmazás?</h5>
-                  <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;color:rgb(1,194,154)">Regisztrálj most!</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Regisztrálj most!</h6>
                  <div style="max-width: 30rem;" class="d-flex justify-content-center">
                     <img width="70%" src="./kepek/logo.png" alt="">
                  </div> 
@@ -246,8 +266,8 @@
                 </div>  
               </div>
         </div>
-        <div class="col-6 d-flex align-items-center  justify-content-start">
-            <div class="card bg-dark" style="width: 28rem;height:30rem;box-shadow: 0px 0px 8px 1px #676464;">
+        <div  class="col-lg-6 col-sm-12 col-md-12 d-flex align-items-center ">
+            <div class="card bg-dark">
                 <div class="card-body bg-dark">
                   <h5 class="card-title" style="color:rgb(255, 255, 255);text-align: center;font-weight: 700;">Használnád az alkalmazást?</h5>
                   <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;margin-top: 10%;">Töltsd le!</h6>

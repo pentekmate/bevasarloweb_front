@@ -80,6 +80,7 @@ function megjelenit(kep) {
     let profkep = '<img  src="./Kepek/' + kep + '.png" style="width:80px;height:80px">'
     document.getElementById("profilkep").innerHTML = profkep
     document.getElementById("profilkep1").innerHTML = profkep
+    document.getElementById("sidebarprof").innerHTML = profkep
 
 
 }
@@ -359,7 +360,13 @@ observer2.observe(document.querySelector('.harmadik'));
 //-----------------------------NEGYEDIK-----------------------------------
 
 
-
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
 
 logincheck()
 

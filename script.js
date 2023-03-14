@@ -112,6 +112,14 @@ const observer6 = new IntersectionObserver(entries => {
 observer6.observe(document.querySelector('.kartyak'));
 
 //---------------------------------------------------------
+let width = window.screen.width
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
 
 checklogin()
