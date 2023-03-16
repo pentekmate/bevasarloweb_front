@@ -7,6 +7,7 @@
 
 html{
     height: 100%;
+    scroll-behavior: smooth;
 }
 .fo{
     min-height: 100%;
@@ -26,17 +27,8 @@ html{
     width:fit-content;
     justify-content: center;
 }
-#logo{
-    background-color: rgb(50,50,50);
-    border-radius: 50px;
-    width:35px;
-    height:40px;
-}
-#logo:hover{
-    background-color: rgb(50,50,50);
-    border-radius: 0px;
-    transform: scale(1.2);
-}
+
+
 #leftimg{
     animation-fill-mode: forwards;
     transition: transform .5s ease;
@@ -79,12 +71,20 @@ html{
 #profilkep:hover{
     transform: scale(1.2); 
 }
-.navbar-brand{
+.nav-link{
     color:white;
     font-weight: 550;
     text-shadow: 2px 2px 10px #000000;
     font-size:22px;
     font-family: sans-serif;
+}
+.navbar{
+    padding-bottom: 0;
+}
+.active{
+    background-color: rgb(1,194, 154)!important;
+    transform: translateY(-10px);
+    text-shadow:0 0 1px #ffffff;
 }
 
 .pontok,.komment,.listak,.regisztracio,#logo,.bejelentkezesgomb,#profilkep,#udv{
@@ -92,7 +92,6 @@ html{
    
 }
 .pontok:hover,.komment:hover,.listak:hover,.regisztracio:hover,.bejelentkezesgomb:hover,#udv:hover{
-    animation: borderteszt 1s ease 1 normal both;
     color:white;
     transform: translateY(-10px);
     text-shadow:0 0 7px #ffffff;
@@ -207,6 +206,7 @@ body{
     background-image: linear-gradient(rgb(1,194,154),rgb(0, 0, 0))!important;
     background-size: cover;
     display: grid;
+    position: relative;
  
 }
 body::-webkit-scrollbar{
@@ -215,11 +215,9 @@ body::-webkit-scrollbar{
 body{
     -ms-overflow-style: none;
     scrollbar-width: none;
+    position: relative;
 }
 
-.navbar{
-    padding-bottom: 0;
-}
 
 .velemeny{
     background-image: linear-gradient(rgb(0, 0, 0),rgb(1,194,154))!important;
@@ -310,7 +308,7 @@ hr{
     transition: transform 0.5s ease-out;
   }
 .custom-shape-divider-bottom-1678725383 {
-    z-index: -1;
+    z-index: 0;
     left:0;
     min-width: 100vw;
     overflow: hidden;
@@ -373,6 +371,45 @@ hr{
     font-size: 36px;
     margin-left: 50px;
   }
+.custom-shape-divider-bottom-1678826502 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1678826502 svg {
+    position: relative;
+    display: block;
+    width: calc(122% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1678826502 .shape-fill {
+    fill: #000000;
+}
+
+.custom-shape-divider-top-1678826616 {
+    overflow: hidden;
+    position: absolute;
+    bottom:0;
+    right:0;
+    width:100vw;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1678827767 {
+    width: 100vw;
+    left:0;
+    position: absolute;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+
   
 
 
@@ -386,10 +423,6 @@ hr{
 }
  
 }
-
-
-
-
 
 @keyframes forgatas{
     0%,50%,100%{
@@ -407,18 +440,6 @@ hr{
     40%,90%{
         transform: rotate(0deg);
     }
-}
-
-@keyframes borderteszt {
-    from{
-        border-bottom: 0;
-    }
-    to{
-        border-bottom: #ffffff;
-        border-bottom-width: 2px;
-        border-bottom-style: groove;
-    }
-    
 }
 
 @keyframes szin{
