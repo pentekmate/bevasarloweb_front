@@ -197,7 +197,7 @@ function fetchujnev(nev){
     )   
     .then( 
         setTimeout(() => {
-            window.location.href="../login.html"
+            window.location.href="../Login/login.html"
            }, "2500"))
     .catch((error) => {
         console.error(error);

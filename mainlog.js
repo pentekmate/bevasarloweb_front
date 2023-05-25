@@ -108,7 +108,7 @@ function kommentek(tomb) {
         sz += '<span  class="position-absolute bottom-0 end-0"  style="color:rgb(1,194,154)">' + item.wm_datum + '</span>'
         sz += '</div>'
         sz += '<div class="col-1"><div class="d-flex flex-row bd-highlight mb-3"> <div class="p-2 bd-highlight" > <button onclick="egyetert('+item.wm_egyetertett+','+item.id+')" id="egyet'+item.id+'" style="border:0;background-color:transparent; background-repeat: no-repeat;" title="Egyetértek"> <i id="like'+item.id+'" style="color: green;font-size:1.3rem"  class="bi bi-hand-thumbs-up"></i></div > </button><div class="p-2 bd-highlight"><button onclick="nemertegyet('+item.wm_nemertett_egyett+','+item.id+')" id="nemegyet'+item.id+'" title="Nem értek egyet" style="border:0;background-color:transparent; background-repeat: no-repeat;"> <i id="nemtetszik'+item.id+'" style="color:red;font-size:1.3rem" class="bi bi-hand-thumbs-down"></i> </button></div><div class="p-2 bd-highlight"><button onclick="jelent('+item.wm_jelentett+','+item.id+')" id="jelentett" title="Jelentem" style="border:0;background-color:transparent; background-repeat: no-repeat;"><i id="jel'+item.id+'" style="color:yellow;font-size:1.3rem" class="bi bi-exclamation-square"></i></button></div></div ></div>'
-        sz +='<div class="col-1"></div>'
+        //sz +='<div class="col-1"></div>'
         sz += '</div>'
     })
     document.getElementById("megjelenit").innerHTML = sz
@@ -220,6 +220,7 @@ function nemertegyetFetchFalse(nemegyet,id)
 
 function jelent(jelentes,id)
 {
+
 let className=document.getElementById("jel"+id).className
 
 if(className=="bi bi-exclamation-square")

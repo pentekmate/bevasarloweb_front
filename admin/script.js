@@ -161,9 +161,6 @@ function kommentek(tomb) {
             sz += item.wm_szoveg
             sz += '</td>'
             sz += '<td>'
-            sz+=item.wm_jelentett
-            sz += '</td>'
-            sz += '<td>'
             sz += '<button type="button "onclick="kommenttorles(event,' + item.id + ')" style="color:white"  class="btn bg-danger">Törlés</button>'
             sz += '</td>'
             sz += '</tr>'
